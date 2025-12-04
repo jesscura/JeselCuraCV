@@ -1,0 +1,5 @@
+# Redirect www to non-www
+https://www.jesscura.com/* https://jesscura.com/:splat 301!
+
+# SPA fallback - if deploying as SPA (currently not needed for static site)
+# /* /index.html 200
