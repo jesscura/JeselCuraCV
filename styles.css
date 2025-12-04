@@ -176,20 +176,73 @@ main {
     --accent: #000000;
     --border: #dddddd;
   }
+  
+  @page {
+    margin: 0.75in;
+    size: letter;
+  }
+  
   body {
     background: #ffffff !important;
     color: #000000 !important;
     font-family: Arial, Helvetica, sans-serif;
   }
+  
   .site-header, .site-footer, .actions { display: none !important; }
+  
   .card {
     box-shadow: none !important;
     border: 1px solid #dddddd !important;
     page-break-inside: avoid;
+    break-inside: avoid;
+    margin: 14px 0;
   }
-  a { color: #000000; text-decoration: none; }
-  .container { max-width: 100%; padding: 0; }
-  main { padding: 0; }
+  
+  /* Prevent orphaned headings */
+  h1, h2, h3, h4, h5, h6 {
+    page-break-after: avoid;
+    break-after: avoid;
+    page-break-inside: avoid;
+    break-inside: avoid;
+  }
+  
+  /* Keep role sections together when possible */
+  .role {
+    page-break-inside: avoid;
+    break-inside: avoid;
+  }
+  
+  /* Prevent widows and orphans */
+  p, li {
+    orphans: 3;
+    widows: 3;
+  }
+  
+  /* Ensure lists stay together better */
+  ul, ol {
+    page-break-inside: avoid;
+    break-inside: avoid;
+  }
+  
+  /* Role headers should stay with content */
+  .role-header {
+    page-break-after: avoid;
+    break-after: avoid;
+  }
+  
+  a { 
+    color: #000000; 
+    text-decoration: none;
+  }
+  
+  .container { 
+    max-width: 100%; 
+    padding: 0; 
+  }
+  
+  main { 
+    padding: 0; 
+  }
 }
 
 /* Responsive tweaks */
